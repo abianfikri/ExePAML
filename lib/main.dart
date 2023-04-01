@@ -52,12 +52,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(padding: EdgeInsets.all(50)),
             Image.asset(
               'assets/image/pokeball.png',
-              width: 120,
+              width: 220,
               height: 120,
             ),
-            Padding(padding: EdgeInsets.all(70)),
+            Padding(padding: EdgeInsets.all(80)),
             FloatingActionButton(
-              child: Icon(Icons.arrow_right_alt),
+              child: Icon(Icons.arrow_forward),
               backgroundColor: Colors.amber,
               onPressed: () {
                 Navigator.push(context,
