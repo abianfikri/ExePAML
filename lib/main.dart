@@ -1,3 +1,4 @@
+import 'package:exercise_paml1/loginpage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,10 +11,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: const MyHomePage(title: 'Home Page'),
     );
   }
@@ -34,30 +31,39 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Center(
         child: Column(
           children: [
-            Padding(padding: EdgeInsets.all(16)
-            ),
+            Padding(padding: EdgeInsets.all(60)),
             Text(
               "Pokedex.",
-              style: TextStyle(fontSize: 35, color: Colors.yellow, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 35,
+                  color: Colors.yellow,
+                  fontWeight: FontWeight.bold),
             ),
-            Padding(padding: EdgeInsets.all(20)
-            ),
+            Padding(padding: EdgeInsets.all(20)),
             Text("Welcome to Pokedex",
-            style: TextStyle(
-              color: Color.fromARGB(255, 157, 157, 154), 
-            fontSize: 16)
-            ),
+                style: TextStyle(
+                    color: Color.fromARGB(255, 157, 157, 154), fontSize: 16)),
             Text("You can find your favorite pokemon here",
-            style: TextStyle(
-              color: Color.fromARGB(255, 157, 157, 154), 
-            fontSize: 16)
-            )
+                style: TextStyle(
+                    color: Color.fromARGB(255, 157, 157, 154), fontSize: 16)),
+            Padding(padding: EdgeInsets.all(50)),
+            Image.asset(
+              'assets/image/pokeball.png',
+              width: 120,
+              height: 120,
+            ),
+            Padding(padding: EdgeInsets.all(70)),
+            FloatingActionButton(
+              child: Icon(Icons.arrow_right_alt),
+              backgroundColor: Colors.amber,
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginPage()));
+              },
+            ),
           ],
         ),
       ),
