@@ -1,4 +1,5 @@
 import 'package:exercise_paml1/main.dart';
+import 'package:exercise_paml1/registerpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -153,7 +154,8 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       TextButton(onPressed: (){
-
+                        Navigator.push(context, 
+                        MaterialPageRoute(builder: (context) => RegisterPage()));
                       }, child: Text(
                         "Sign Up",
                         style: TextStyle(
