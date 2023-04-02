@@ -31,40 +31,42 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Padding(padding: EdgeInsets.all(60)),
-            Text(
-              "Pokedex.",
-              style: TextStyle(
-                  fontSize: 35,
-                  color: Colors.yellow,
-                  fontWeight: FontWeight.bold),
-            ),
-            Padding(padding: EdgeInsets.all(20)),
-            Text("Welcome to Pokedex",
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              Padding(padding: EdgeInsets.all(60)),
+              Text(
+                "Pokedex.",
                 style: TextStyle(
-                    color: Color.fromARGB(255, 157, 157, 154), fontSize: 16)),
-            Text("You can find your favorite pokemon here",
-                style: TextStyle(
-                    color: Color.fromARGB(255, 157, 157, 154), fontSize: 16)),
-            Padding(padding: EdgeInsets.all(50)),
-            Image.asset(
-              'assets/image/pokeball.png',
-              width: 220,
-              height: 120,
-            ),
-            Padding(padding: EdgeInsets.all(80)),
-            FloatingActionButton(
-              child: Icon(Icons.arrow_forward),
-              backgroundColor: Colors.amber,
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LoginPage()));
-              },
-            ),
-          ],
+                    fontSize: 35,
+                    color: Colors.yellow,
+                    fontWeight: FontWeight.bold),
+              ),
+              Padding(padding: EdgeInsets.all(20)),
+              Text("Welcome to Pokedex",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 157, 157, 154), fontSize: 16)),
+              Text("You can find your favorite pokemon here",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 157, 157, 154), fontSize: 16)),
+              Padding(padding: EdgeInsets.all(50)),
+              Image.asset(
+                'assets/image/pokeball.png',
+                width: 220,
+                height: 120,
+              ),
+              Padding(padding: EdgeInsets.all(80)),
+              FloatingActionButton(
+                child: Icon(Icons.arrow_forward),
+                backgroundColor: Colors.amber,
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
