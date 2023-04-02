@@ -1,3 +1,4 @@
+import 'package:exercise_paml1/dashboardpage.dart';
 import 'package:exercise_paml1/main.dart';
 import 'package:exercise_paml1/registerpage.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _fieldData = GlobalKey<FormState>();
-  final emailData = TextEditingController();
+  final username = TextEditingController();
   final passData = TextEditingController();
 
   bool eyeToggle = true;
@@ -66,8 +67,8 @@ class _LoginPageState extends State<LoginPage> {
                     width: 400,
                     height: 80,
                     child: TextFormField(
-                      keyboardType: TextInputType.emailAddress,
-                      controller: emailData,
+                      keyboardType: TextInputType.name,
+                      controller: username,
                       decoration: InputDecoration(
                         labelText: "Name",
                         hintText: "Enter your name",
@@ -88,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                     width: 400,
                     height: 100,
                     child: TextFormField(
-                    keyboardType: TextInputType.emailAddress,
+                    keyboardType: TextInputType.visiblePassword,
                     obscureText: eyeToggle,
                     controller: passData,
                     decoration: InputDecoration(
@@ -102,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                           });
                         },
                         child: Icon(
-                            eyeToggle ? Icons.visibility : Icons.visibility_off),
+                            eyeToggle ? Icons.visibility_off : Icons.visibility_off),
                       ),
                     ),
                     validator: (value) {
@@ -118,10 +119,8 @@ class _LoginPageState extends State<LoginPage> {
                   onTap: () {
                     if (_fieldData.currentState!.validate()) {
                       print("Success");
-                      emailData.clear();
-                      passData.clear();
                       Navigator.push(context, 
-                      MaterialPageRoute(builder:  (context) => MyApp()));
+                      MaterialPageRoute(builder:  (context) => DashboardPage(nama: username.text,)));
                     }
                   },
                   child: Container(
